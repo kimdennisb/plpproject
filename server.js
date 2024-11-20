@@ -16,14 +16,11 @@ app.use(express.static(__dirname, { dotfiles: "allow" }));
 
 app.use(cookieParser());
 
-
-
 // setting the view engine and for server to look at the views folder
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-
-require("dotenv");
+require('dotenv').config();
 
 const db = require("./database.js");
 
