@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <title>Telemedicine</title>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/header.ejs"); -%>
+    </header>
+
+    <section>
+        <h1>Register Doctors</h1>
+        <form action="/registerdoctors" method="post" class="signup">
+            <label for="name">First Name
+                <input type="text" id="firstname" name="first_name" required />
+            </label>
+            <label for="name">Last Name
+                <input type="text" id="lastname" name="last_name" required />
+            </label>
+            <label for="email">Email
+                <input type="email" id="email" name="email" placeholder="email@com" required />
+            </label>
+            <label for="specialization">Specialization
+                <input type="text" id="specialization" name="specialization" required />
+            </label>
+            <label for="phone">Phone
+                <input type="tel" id="number" name="phone" placeholder="25412345678" required />
+            </label>
+            <label for="schedule">Schedule
+                <input type="datetime-local" name="schedule" id="schedule" required />
+                <div class="schedules">
+
+                </div>
+            </label>
+
+            <label for="terms_and_conditions">
+
+                <div> <input type="checkbox" id="terms_and_conditions" required />
+                    <p>Agree to terms and conditions</p>
+                </div>
+
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+<script src="/assets/scripts/schedule.js"></script>
+
+</html>

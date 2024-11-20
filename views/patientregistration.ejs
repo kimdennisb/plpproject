@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <title>Telemedicine</title>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/header.ejs"); -%>
+    </header>
+
+    <section>
+        <h1>Register Patients</h1>
+        <form action="/registerpatients" method="post" class="signup">
+            <label for="name">First Name
+                <input type="text" id="firstname" name="first_name" required />
+            </label>
+            <label for="name">Last Name
+                <input type="text" id="lastname" name="last_name" required />
+            </label>
+            <label for="email">Email
+                <input type="email" id="email" name="email" placeholder="email@com" required />
+            </label>
+            <label for="phone">Phone
+                <input type="tel" id="number" name="phone" placeholder="25412345678" required />
+            </label>
+            <label for="date_of_birth">
+                Date of Birth
+                <input type="date" id="dateofbirth" name="date_of_birth" required />
+            </label>
+            <label>
+                <p>Gender</p>
+                <div>
+                    <label for="gender-male">
+                        <input type="radio" name="gender" id="gender-male" value="male" class="Gender" required>
+                        <div>Male</div>
+                    </label>
+                    <label for="gender-female">
+                        <input type="radio" name="gender" id="gender-female" value="female" class="Gender">
+                        <div>Female</div>
+                    </label>
+                </div>
+            </label>
+
+            <label for="address">
+                Address
+                <input type="text" name="address" id="address" required />
+            </label>
+
+            <label for="password">Password
+                <input type="password" id="password" name="password" required />
+            </label>
+
+            <label for="confpassword">Confirm Password
+                <input type="password" id="confpassword" required />
+            </label>
+            <label for="terms_and_conditions">
+
+                <div> <input type="checkbox" id="terms_and_conditions" required />
+                    <p>Agree to terms and conditions</p>
+                </div>
+
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>

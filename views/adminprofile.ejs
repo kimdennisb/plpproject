@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <title>Telemedicine</title>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/headerLoggedInAdmin.ejs"); -%>
+    </header>
+
+    <section>
+        <h1>Admin Profile</h1>
+        <div class="adminprofile">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%=data[0].id%>
+                        <td>
+                            <input name="first_name" type="text" value=<%=data[0].username%> disabled>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>

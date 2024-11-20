@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <title>Telemedicine</title>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/header.ejs"); -%>
+    </header>
+
+    <section>
+        <h1>Login Patients</h1>
+        <form action="/loginpatients?refer=<%=refer%>" method="post" class="signup">
+            <label for="email">Email
+                <input type="email" id="email" name="email" placeholder="email@com" required />
+            </label>
+
+            <label for="password">Password
+                <input type="password" id="password" name="password" required />
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <title>Telemedicine</title>
+</head>
+
+<body>
+    <header>
+        <%- include("partials/headerLoggedInPatient.ejs"); -%>
+    </header>
+
+    <section>
+        <h1>Book Appointment</h1>
+        <form action="/bookappointment" method="post" class="signup">
+            <label>
+                <p>Doctors</p>
+                <div>
+                    <input class="inputForDoctor" type="text" name="selectedDoctor" />
+                    <select name="doctor" id="doctor">
+                        <% data.forEach((doc)=>{%>
+                            <option class="<%=doc.id%>">
+                                <%=doc.first_name%>
+                                    <%=doc.last_name%>
+                            </option>
+                            <%})%>
+                    </select>
+                </div>
+            </label>
+
+            <label for="doctorschedule">Availability
+                <% data.forEach((doc)=>{%>
+                    <%doc.schedule.split(",").forEach((schedule)=>{%>
+                        <p class="<%=doc.id%> datetime-local"> <input type="datetime-local" value="<%=schedule%>"
+                                id="doctorschedule" name="doctorschedules" readonly />
+                            <input type="radio" name="selectTime" />
+                        </p>
+
+                        <%})%>
+                            <% })%>
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+<script src="/assets/scripts/appointment.js"></script>
+
+</html>

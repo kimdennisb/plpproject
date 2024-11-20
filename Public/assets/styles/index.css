@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+}
+
+header .opensidebar,
+header .avatar {
+    margin: 8px;
+    cursor: pointer;
+}
+
+.avatar {
+    height: 2rem;
+    width: auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(110, 101, 101, 0.1) 0px 2px 10px 0px;
+    height: auto;
+    background-color: #FAFAFA;
+}
+
+header li {
+    list-style: none;
+    font-weight: bold;
+    padding: 0px 1rem;
+    margin: .5rem 0;
+    cursor: pointer;
+}
+
+.hamburger {
+    padding: 12px 16px;
+    width: 20px;
+    height: 20px;
+    background: transparent url("data:image/svg+xml, %3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3.75H20M0 10H20M0 16.25H20' vector-effect='non-scaling-stroke' stroke='currentColor' stroke-width='1.5'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+}
+
+#close-open {
+    display: none;
+}
+
+#close-open+label {
+    position: relative;
+    display: none;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+header ul {
+    display: flex;
+    margin: 0;
+}
+
+#close-open:checked~div.nav {
+    display: block;
+    height: 100%;
+}
+
+#close-open:checked~div.nav {
+    display: block;
+}
+
+#close-open:checked~label .hamburger {
+    background: transparent url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 18.75L18.75 1.25M18.75 18.75L1.25 1.25' vector-effect='non-scaling-stroke' stroke='currentColor' stroke-width='1.5' stroke-linejoin='bevel'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    z-index: 1;
+}
+
+body {
+    font-family: 'FF DIN Pro', sans-serif;
+    background-color: #fff
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 15px;
+    width: 350px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+form input {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 0.3rem 0;
+}
+
+input[type='checkbox'] {
+    width: auto;
+    margin: 0 8px;
+}
+
+input[type='radio'] {
+    width: auto;
+    display: inline;
+    margin: 5px;
+}
+
+label[for='gender-male'],
+label[for='gender-female'] {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+label[for='terms_and_conditions'] div,
+div.patientprofile,
+div.adminprofile {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+div.select-country {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+select {
+    width: 100%;
+    border: 0;
+    appearance: none;
+}
+
+select.hidearrow {
+    appearance: auto;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+p {
+    color: inherit;
+}
+
+div span {
+    color: inherit;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    background-color: lightgray;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 5px 8px;
+    margin: 1rem 0;
+    display: block;
+}
+
+/* .select-country span,
+span {
+    color: palevioletred;
+    height: 18px;
+    width: auto;
+} */
+
+input::placeholder {
+    color: #6b7280;
+}
+
+input:focus-visible {
+    outline: 2px solid gray;
+    outline-offset: 2px;
+}
+
+.patientprofile table,
+.adminprofile table {
+    border-spacing: 0;
+    font-family: system-ui;
+    /* margin: 1.5em auto; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctorsprofiles table,
+table.appointments {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+table.appointments th:last-of-type,
+table.appointments td:last-of-type {
+    border-inline-end-width: 1px;
+}
+
+table.appointments tbody tr:last-of-type td {
+    border-block-end-width: 1px;
+}
+
+.patientprofile table tr,
+.adminprofile table tr {
+    display: flex;
+    flex-direction: column;
+}
+
+:is(td, th) {
+    border-style: solid;
+    padding: .5ch 1ch;
+    height: 2em;
+}
+
+
+
+th:nth-of-type(even),
+td:nth-of-type(even) {
+    background: #F2F2F2;
+}
+
+th:first-of-type {
+    border-start-start-radius: .5em
+}
+
+th:last-of-type {
+    /* border-start-end-radius: .5em */
+    border-end-start-radius: .5em;
+}
+
+tr:last-of-type td:first-of-type {
+    /* border-end-start-radius: .5em */
+    border-start-end-radius: .5em;
+}
+
+tr:last-of-type td:last-of-type {
+    border-end-end-radius: .5em
+}
+
+:is(td, th) {
+    border-block-width: 1px 0;
+    border-inline-width: 1px 0;
+}
+
+:is(td, th):last-of-type {
+    border-block-end-width: 1px
+}
+
+/* tr:last-of-type :is(td):last-of-type {
+    border-block-end-width: 1px;
+} */
+.doctorsprofiles td:last-of-type {
+    border-block-width: 0;
+}
+
+.doctorsprofiles th:last-of-type {
+    border-inline-width: 1px;
+}
+
+.patientprofile td,.adminprofile td {
+    display: flex;
+    justify-content: space-between;
+    border-inline-end-width: 1px;
+}
+
+svg.edit {
+    width: 2em;
+    height: 1.5em;
+    cursor: pointer;
+}
+
+svg.upload {
+    display: none;
+}
+
+svg.edit.hideedit {
+    display: none;
+}
+
+svg.upload.showupload {
+    display: block;
+}
+
+td input {
+    width: 100%;
+    border: 0;
+    color: black;
+}
+
+.schedules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedules p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedules p svg {
+    cursor: pointer;
+}
+
+.assignedschedules {
+    flex-direction: column;
+    /* height: auto; */
+}
+
+.assignedschedules p {
+    display: flex;
+    flex-direction: row;
+}
+
+.assignedschedules svg {
+    display: none;
+}
+
+.assignedschedules svg.show {
+    display: block;
+    cursor: pointer;
+}
+
+label[for='doctorschedule'] .datetime-local {
+    display: none;
+}
+
+label[for='doctorschedule'] .datetime-local.show {
+    display: flex;
+}
+
+.inputForDoctor {
+    display: none;
+}
+
+/* Tablet and Mobile View */
+@media (max-width: 768px) {
+
+    #close-open+label {
+        display: flex;
+        align-items: center;
+    }
+
+    #close-open:checked~div.nav {
+        width: 320px;
+    }
+
+    div.nav {
+        overflow: hidden;
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: auto;
+        flex-direction: column;
+        transition: all 50ms ease-in-out;
+        height: 0;
+        background-color: #ffffff;
+    }
+
+    header ul {
+        flex-direction: column;
+        top: 5rem;
+        position: relative;
+    }
+
+    header li {
+        padding: 5px 12px;
+    }
+}
